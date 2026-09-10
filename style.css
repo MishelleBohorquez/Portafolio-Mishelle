@@ -1,0 +1,509 @@
+@font-face {
+    font-family: "Futura Now Headline";
+    src: url("/assets/fonts/FuturaNowHeadline-Bold.woff2") format("woff2");
+    font-weight: 800;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: #363636;
+    line-height: 1.5;
+}
+
+h1, h2, h3,
+button,
+.boton {
+    font-family: "Futura Now Headline", sans-serif;
+    font-weight: 800;
+}
+
+h2 {
+    text-align: center;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+/* ===== HEADER — badge "Disponible a nuevos proyectos" ===== */
+header {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+}
+
+header p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #1a1a1a;
+    color: #ffffff;
+    font-size: 0.8rem;
+    padding: 8px 16px;
+    border-radius: 999px;
+}
+
+header p::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    flex-shrink: 0;
+}
+
+/* ===== HERO ===== */
+#hero-title {
+    text-align: center;
+    font-size: clamp(2.75rem, 9vw, 6rem);
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+    margin: 0 auto 40px;
+    color: #1a1a1a;
+}
+
+/* ===== GALERÍA — imágenes superpuestas en abanico ===== */
+.galeria-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0 auto 48px;
+}
+
+.galeria-hero li {
+    width: clamp(140px, 20vw, 220px);
+    aspect-ratio: 1 / 1;
+    margin: 0 -24px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+    background: #e5e5e5;
+    transition: transform 0.25s ease, z-index 0s;
+}
+
+.galeria-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.galeria-hero li:nth-child(1) {
+    transform: rotate(-8deg) translateY(6px);
+    z-index: 1;
+}
+.galeria-hero li:nth-child(2) {
+    transform: rotate(0deg) translateY(-10px);
+    z-index: 3;
+}
+.galeria-hero li:nth-child(3) {
+    transform: rotate(8deg) translateY(6px);
+    z-index: 2;
+}
+
+.galeria-hero li:hover {
+    transform: rotate(0deg) translateY(-16px) scale(1.04);
+    z-index: 10;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .galeria-hero li {
+        transition: none;
+    }
+}
+
+/* ===== SUBTÍTULO — texto grande gris debajo de la galería ===== */
+.rol {
+    font-size: clamp(2rem, 7vw, 4.5rem);
+    line-height: 0.95;
+    color: #d4d4d4;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* ===== BARRA DE ENLACES — fondo negro ===== */
+.barra-enlaces {
+    background: #1a1a1a;
+    padding: 16px 24px;
+    margin: 0 auto 40px;
+}
+
+.lista-enlaces {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.lista-enlaces .boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #2b2b2b;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: 1px solid #3a3a3a;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.lista-enlaces .boton:hover,
+.lista-enlaces .boton:focus-visible {
+    background: #3a3a3a;
+    border-color: #555555;
+}
+
+.lista-enlaces .boton:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+.lista-enlaces svg {
+    flex-shrink: 0;
+}
+
+/* ===== SOBRE MÍ — texto + fotos superpuestas ===== */
+.sobre-mi {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 0 24px;
+}
+
+.sobre-mi h2 {
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.sobre-mi__fotos {
+    position: relative;
+    padding: 30px 20px 20px 0;
+}
+
+.foto-fondo {
+    width: 85%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.foto-frente {
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 55%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+    transform: rotate(4deg);
+    z-index: 2;
+}
+
+@media (max-width: 720px) {
+    .sobre-mi {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-mi h2 {
+        text-align: center;
+    }
+
+    .foto-frente {
+        width: 60%;
+    }
+
+    .foto-acento {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* ===== PROYECTOS — carrusel arrastrable ===== */
+.proyectos__intro {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.proyectos__intro p {
+    color: #666666;
+}
+
+.carrusel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    cursor: grab;
+    padding-block: 24px;
+    padding-inline: calc(50% - min(35vw, 210px));
+    scrollbar-width: none; /* Firefox */
+}
+
+.carrusel::-webkit-scrollbar {
+    display: none;
+}
+
+.carrusel.arrastrando {
+    cursor: grabbing;
+    scroll-snap-type: none;
+}
+
+.carrusel__pista {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+
+.carrusel__item {
+    flex: 0 0 auto;
+    width: min(70vw, 420px);
+    aspect-ratio: 3 / 4;
+    scroll-snap-align: center;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #e5e5e5;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: scale(0.85);
+    opacity: 0.6;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.carrusel__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.carrusel__item.activa {
+    transform: scale(1);
+    opacity: 1;
+}
+
+#boton-proyecto-actual {
+    display: block;
+    margin: 24px auto 0;
+}
+
+/* ===== FOOTER — contacto con palabra gigante de fondo ===== */
+footer {
+    background: #d4d4d4;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.contacto {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+}
+
+.contacto h2 {
+    font-size: 22vw;
+    line-height: 1;
+    white-space: nowrap;
+    color: #ffffff;
+    margin: 0;
+    user-select: none;
+}
+
+.contacto .boton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000000;
+    border-color: #000000;
+    color: #ffffff;
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    z-index: 2;
+}
+
+.contacto .boton:hover,
+.contacto .boton:focus-visible {
+    background: #1a1a1a;
+}
+
+.contacto__enlaces {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.contacto__enlaces a {
+    color: #363636;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+}
+
+.contacto__enlaces a:hover,
+.contacto__enlaces a:focus-visible {
+    text-decoration: underline;
+}
+
+footer small {
+    display: block;
+    color: #6b6b6b;
+    font-size: 0.75rem;
+}
+
+@media (max-width: 640px) {
+    .contacto .boton {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== HABILIDADES — galería oscura en dos filas ===== */
+.habilidades {
+    background: #111111;
+    padding: 60px 24px;
+}
+
+.habilidades h2 {
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.habilidades h3 {
+    color: #ffffff;
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto 16px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.habilidades h3:not(:first-of-type) {
+    margin-top: 32px;
+}
+
+.lista-iconos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    list-style: none;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.lista-iconos li {
+    width: 140px;
+    aspect-ratio: 1 / 1;
+    background: #1e1e1e;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.lista-iconos img {
+    max-width: 60%;
+    max-height: 60%;
+    object-fit: contain;
+}
+
+@media (max-width: 640px) {
+    .lista-iconos li {
+        width: 100px;
+    }
+}
+
+/* ===== FORMACIÓN ===== */
+.formacion {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 40px 24px;
+    margin: 0 auto 40px;
+}
+
+.formacion h2 {
+    text-align: right;
+    text-transform: uppercase;
+    font-size: clamp(2rem, 6vw, 4rem);
+    margin-bottom: 24px;
+}
+
+.lista-formacion {
+    list-style: none;
+    border-top: 1px solid #333333;
+}
+
+.fila-formacion {
+    display: grid;
+    grid-template-columns: 160px 1fr 1fr;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 16px;
+    border-bottom: 1px solid #333333;
+    color: #ffffff;
+    background: transparent;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.fila-formacion:hover {
+    background: #ffffff;
+    color: #1a1a1a;
+}
+
+.periodo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.periodo strong {
+    font-family: "Futura Now Headline", sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.periodo small {
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+.detalle {
+    text-align: right;
+}
+
+@media (max-width: 640px) {
+    .fila-formacion {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .detalle {
+        text-align: left;
+    }
+}
