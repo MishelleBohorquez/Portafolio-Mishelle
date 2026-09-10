@@ -220,6 +220,19 @@ header p::before {
     z-index: 2;
 }
 
+.foto-acento {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    z-index: 3;
+}
+
+/* En móvil se apilan: texto arriba, fotos abajo */
 @media (max-width: 720px) {
     .sobre-mi {
         grid-template-columns: 1fr;
@@ -322,12 +335,14 @@ footer {
 }
 
 .contacto h2 {
-    font-size: 22vw;
+    display: inline-block;
+    font-size: clamp(19rem, 16vw, 3rem);
     line-height: 1;
     white-space: nowrap;
     color: #ffffff;
     margin: 0;
     user-select: none;
+    transform-origin: center;
 }
 
 .contacto .boton {
@@ -341,6 +356,8 @@ footer {
     padding: 16px 32px;
     font-size: 1.1rem;
     z-index: 2;
+    border-radius: 16px;
+    text-decoration: none;
 }
 
 .contacto .boton:hover,
