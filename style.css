@@ -75,6 +75,30 @@ header p::before {
     color: #1a1a1a;
 }
 
+.sobre-mi h2,
+.proyectos__intro h2,
+.habilidades > h2,
+.formacion h2 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    line-height: 1;
+}
+
+.sobre-mi h2 {
+    text-align: left;
+}
+
+.proyectos__intro h2 {
+    text-align: center;
+}
+
+.habilidades > h2 {
+    text-align: center;
+}
+
+.formacion h2 {
+    text-align: right;
+}
+
 /* ===== GALERÍA — imágenes superpuestas en abanico ===== */
 .galeria-hero {
     display: flex;
@@ -471,7 +495,6 @@ header p::before {
     }
 }
 
-
 /* ======= ACCESIBILIDAD ============= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -519,8 +542,8 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #000000;
-    border-color: #000000;
+    background: #1a1a1a;
+    border-color: none;
     color: #ffffff;
     padding: 16px 32px;
     font-size: 1.1rem;
