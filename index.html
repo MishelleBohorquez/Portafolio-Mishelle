@@ -140,33 +140,65 @@
             </div>
 
             <div class="carrusel" id="carrusel-proyectos">
+
                 <ul class="carrusel__pista">
+
+                    <!-- ENPIX -->
                     <li class="carrusel__item" data-dialog="dialog-enpix" data-nombre="ENPIX">
-                        <img src="" alt="Captura de pantalla del proyecto Enpix">
+
+                        <div class="proyecto__contenido">
+                            <img src="/assets/image/enpix-full.png" alt="Captura de pantalla del proyecto Enpix">
+
+                            <button type="button" class="boton proyecto__boton" data-dialog-open="dialog-enpix">
+                                ENPIX
+                            </button>
+                        </div>
+
                     </li>
-                    <li class="carrusel__item" data-dialog="dialog-happybreak" data-nombre="HAPPY BREAK">
-                        <img src="" alt="Captura de pantalla del proyecto Happy Break">
+
+                    <!-- HAPPY BREAK -->
+                    <li class="carrusel__item activa" data-dialog="dialog-happybreak" data-nombre="HAPPY BREAK">
+
+                        <div class="proyecto__contenido">
+                            <img src="/assets/image/happybreak-full.png"
+                                alt="Captura de pantalla del proyecto Happy Break">
+
+                            <button type="button" class="boton proyecto__boton" data-dialog-open="dialog-happybreak">
+                                HAPPY BREAK
+                            </button>
+                        </div>
+
                     </li>
-                    <li class="carrusel__item" data-dialog="dialog-yogur" data-nombre="HUELLITAS HOTEL">
-                        <img src="" alt="Captura de pantalla del proyecto Huellitas Hotel">
+
+                    <!-- HUELLITAS HOTEL -->
+                    <li class="carrusel__item" data-dialog="dialog-huellitasHotel" data-nombre="HUELLITAS HOTEL">
+
+                        <div class="proyecto__contenido">
+                            <img src="/assets/image/Huellitas.png"
+                                alt="Captura de pantalla del proyecto Huellitas Hotel">
+
+                            <button type="button" class="boton proyecto__boton" data-dialog-open="dialog-huellitasHotel">
+                                HUELLITAS HOTEL
+                            </button>
+                        </div>
+
                     </li>
+
                 </ul>
             </div>
-
-            <button type="button" class="boton" id="boton-proyecto-actual" data-dialog-open="dialog-enpix">ENPIX</button>
         </section>
 
         <!-- HABILIDADES -->
         <section class="habilidades">
             <h2>Habilidades</h2>
- 
+
             <h3>Frontend</h3>
             <ul class="lista-iconos">
                 <li><img src="/assets/iconHerramientas/javaScript.png" alt="JavaScript"></li>
                 <li><img src="/assets/iconHerramientas/html.png" alt="HTML5"></li>
                 <li><img src="/assets/iconHerramientas/css.png" alt="CSS3"></li>
             </ul>
- 
+
             <h3>Backend</h3>
             <ul class="lista-iconos">
                 <li><img src="/assets/iconHerramientas/java.png" alt="Java"></li>
@@ -181,11 +213,11 @@
             <h2>CONTACTO</h2>
             <a class="boton" href="/html/contacto.html" target="_blank" rel="noopener noreferrer">Contáctame</a>
         </div>
- 
+
         <div class="contacto__enlaces">
             <a href="mailto:mishelle_17@live.com">mishelle_17@live.com</a>
         </div>
- 
+
         <small>&copy;2026 | Portafolio de Mishelle Bohorquez</small>
     </footer>
 
@@ -213,11 +245,11 @@
         </div>
     </dialog>
 
-    <dialog id="dialog-yogur" aria-labelledby="dialog-yogur-title">
-        <h2 id="dialog-yogur-title" class="sr-only">Proyecto Huellitas Hotel</h2>
+    <dialog id="dialog-huelllitaHotel" aria-labelledby="dialog-HuellitasHotel-title">
+        <h2 id="dialog-huellitasHotel-title" class="sr-only">Proyecto Huellitas Hotel</h2>
         <img src="" alt="Imagen ampliada del proyecto Huellitas Hotel">
         <div class="acciones-dialog">
-            <a class="boton" href="/assets/image/yogur-full.png" target="_blank" rel="noreferrer">Abrir imagen</a>
+            <a class="boton" href="/assets/image/HuellitasHotel-full.png" target="_blank" rel="noreferrer">Abrir imagen</a>
             <form method="dialog">
                 <button type="submit">Cerrar</button>
             </form>

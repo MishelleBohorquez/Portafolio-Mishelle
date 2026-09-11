@@ -179,7 +179,7 @@ header p::before {
     flex-shrink: 0;
 }
 
-/* ===== SOBRE MÍ — texto + fotos superpuestas ===== */
+/* ===== SOBRE MÍ ===== */
 .sobre-mi {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -253,22 +253,34 @@ header p::before {
 }
 
 /* ===== PROYECTOS — carrusel arrastrable ===== */
+.proyectos {
+    width: 100%;
+    overflow: hidden;
+}
+
 .proyectos__intro {
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
 }
 
 .proyectos__intro p {
     color: #666666;
 }
 
+
+/* ===== CONTENEDOR DEL CARRUSEL ===== */
+
 .carrusel {
+    --ancho-tarjeta: min(65vw, 400px);
+    position: relative;
+    width: 100%;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    overflow-y: visible;
     cursor: grab;
-    padding-block: 24px;
-    padding-inline: calc(50% - min(35vw, 210px));
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-inline: calc((100% - var(--ancho-tarjeta)) / 2);
 }
 
 .carrusel::-webkit-scrollbar {
@@ -278,44 +290,201 @@ header p::before {
 .carrusel.arrastrando {
     cursor: grabbing;
     scroll-snap-type: none;
+    scroll-behavior: auto;
 }
 
 .carrusel__pista {
     display: flex;
-    gap: 24px;
+    align-items: flex-start;
+    width: max-content;
+    gap: clamp(120px, 18vw, 340px);
     list-style: none;
+    margin: 0;
+    padding: 50px 0 90px;
 }
 
 .carrusel__item {
-    flex: 0 0 auto;
-    width: min(70vw, 420px);
-    aspect-ratio: 3 / 4;
+    position: relative;
+    flex: 0 0 var(--ancho-tarjeta);
+    width: var(--ancho-tarjeta);
     scroll-snap-align: center;
-    border-radius: 16px;
-    overflow: hidden;
-    background: #e5e5e5;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    transform: scale(0.85);
-    opacity: 0.6;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    list-style: none;
+    margin: 0;
+    transform-origin: center center;
+    transition:
+        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.4s ease,
+        filter 0.4s ease;
+    z-index: 1;
 }
+
+
+/* ===== CONTENIDO DE LA TARJETA ===== */
+
+.proyecto__contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+}
+
+
+/* ===== IMAGEN ===== */
 
 .carrusel__item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 18px;
+    background: #e5e5e5;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     pointer-events: none;
+    user-select: none;
+    transition: box-shadow 0.4s ease;
 }
+
+
+/* =========================================================
+   TARJETA CENTRAL
+   ========================================================= */
 
 .carrusel__item.activa {
-    transform: scale(1);
+    transform: scale(1) rotate(0deg);
+
     opacity: 1;
+
+    filter: none;
+
+    z-index: 10;
 }
 
-#boton-proyecto-actual {
-    display: block;
-    margin: 24px auto 0;
+.carrusel__item.activa img {
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   TARJETA IZQUIERDA
+   ========================================================= */
+
+.carrusel__item.anterior {
+    transform:
+        scale(0.8)
+        rotate(-9deg)
+        translateX(12%);
+
+    opacity: 0.9;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   TARJETA DERECHA
+   ========================================================= */
+
+.carrusel__item.siguiente {
+    transform:
+        scale(0.8)
+        rotate(9deg)
+        translateX(-12%);
+
+    opacity: 0.9;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   BOTONES DE LOS PROYECTOS
+   ========================================================= */
+
+.proyecto__boton {
+    margin-top: 20px;
+
+    padding: 12px 26px;
+
+    border: none;
+    border-radius: 999px;
+
+    background: #1a1a1a;
+    color: #ffffff;
+
+    font-size: 0.9rem;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease,
+        transform 0.35s ease,
+        background 0.2s ease;
+}
+.carrusel__item.activa .proyecto__boton {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+.proyecto__boton:hover,
+.proyecto__boton:focus-visible {
+    background: #333333;
+}
+
+@media (max-width: 900px) {
+    .carrusel {
+        --ancho-tarjeta: min(68vw, 380px);
+    }
+}
+
+@media (max-width: 640px) {
+    .carrusel {
+        --ancho-tarjeta: 78vw;
+        padding-inline:
+            calc((100% - var(--ancho-tarjeta)) / 2);
+    }
+    .carrusel__pista {
+        padding-top: 35px;
+        padding-bottom: 70px;
+    }
+    .carrusel__item.anterior {
+        transform:
+            scale(0.8)
+            rotate(-7deg)
+            translateX(8%);
+    }
+    .carrusel__item.siguiente {
+        transform:
+            scale(0.8)
+            rotate(7deg)
+            translateX(-8%);
+    }
+}
+
+
+/* ======= ACCESIBILIDAD ============= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .carrusel {
+        scroll-behavior: auto;
+    }
+
+    .carrusel__item,
+    .proyecto__boton {
+        transition: none;
+    }
+
 }
 
 /* ===== FOOTER — contacto con palabra gigante de fondo ===== */
