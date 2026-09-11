@@ -270,6 +270,9 @@ header p::before {
 }
 
 /* SOBRE MÍ */
+.sobre-mi p {
+    text-align: justify;
+}
 
 .sobre-mi {
     display: grid;
