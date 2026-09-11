@@ -28,10 +28,6 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://mishellebohorquez.github.io/Portafolio-Mishelle/">
-
-    <!-- Logo que va en la pestaña -->
-    <link rel="icon" type="image/png" href="/assets/me/FotoLinkedin.png">
-
     <!-- Estilos -->
     <link rel="stylesheet" href="style.css">
     <title>Portafolio Mishelle</title>
@@ -39,12 +35,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Logo que va en la pestaña -->
+    <link rel="icon" type="image/png" href="assets/me/logoMishelle.png">
 </head>
 
 <body>
+
+    <nav class="menu-flotante" aria-label="Navegación de secciones">
+        <button type="button" class="icono-flotante" id="boton-menu" aria-haspopup="true" aria-expanded="false"
+            aria-controls="menu-secciones">
+            <img src="/assets/me/logoMishelle.png" alt="Abrir menú de navegación">
+        </button>
+
+        <ul class="menu-secciones" id="menu-secciones">
+            <li><a href="#hero-title">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#formacion">Formación</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
     <header>
         <p>Disponible a nuevos proyectos</p>
     </header>
+    <br>
 
     <main>
         <!-- HERO -->
@@ -52,12 +68,17 @@
             <h1 id="hero-title">MISHELLE BOHORQUEZ</h1>
 
             <ul class="galeria-hero">
-                <li><img src="" alt="Mishelle Bohorquez trabajando en su computador"></li>
-                <li><img src="" alt="Mishelle Bohorquez en un evento de tecnología"></li>
-                <li><img src="" alt="Mishelle Bohorquez presentando un proyecto"></li>
+                <li><img src="/assets/header/mishelleComputador.png"
+                        alt="Mishelle Bohorquez trabajando en su computador"></li>
+                <li><img src="/assets/header/mishelleIcono.png" alt="Mishelle Bohorquez"></li>
+                <li><img src="/assets/header/mishellePresentando.png" alt="Mishelle Bohorquez presentando un proyecto">
+                </li>
             </ul>
 
             <h2 class="rol">INGENIERA DE SISTEMAS Y COMPUTACIÓN</h2>
+            <br>
+            <br>
+            <br>
 
             <nav aria-label="Enlaces principales" class="barra-enlaces">
                 <ul class="lista-enlaces">
@@ -95,22 +116,25 @@
             </nav>
         </section>
 
-        <section class="sobre-mi">
+        <section class="sobre-mi" id="sobre-mi">
             <div class="sobre-mi__texto">
                 <h2>SOBRE MÍ</h2>
                 <p>
-                    De la idea al despliegue: diseño interfaces con JavaScript y las sostengo con backends en Java
-                    (Spring Boot) y Python. Aprendizaje constante, código limpio.
+                    Soy Ingeniera de Sistemas y Computación y construyo mi camino en desarrollo de software a través de
+                    proyectos Full Stack.
+                    Me gusta entender una necesidad, convertirla en una solución funcional y enfrentar todo lo que
+                    aparece en el proceso: desde la interfaz hasta la lógica que la hace funcionar.
                 </p>
             </div>
             <div class="sobre-mi__fotos">
-                <img class="foto-fondo" src="/assets/me/FotoLinkedin.png" alt="Mishelle Bohorquez">
-                <img class="foto-frente" src="/assets/me/FotoLinkedin.png" alt="Mishelle Bohorquez presentando">
+                <img class="foto-fondo" src="/assets/sobreMi/mishellePrimario.png" alt="Mishelle Bohorquez">
+                <img class="foto-frente" src="/assets/sobreMi/mishelleSecundario.png"
+                    alt="Mishelle Bohorquez presentando">
             </div>
         </section>
 
         <!-- FORMACIÓN -->
-        <section class="formacion">
+        <section class="formacion" id="formacion">
             <h2>FORMACIÓN</h2>
             <ul class="lista-formacion">
                 <li class="fila-formacion">
@@ -133,7 +157,7 @@
         </section>
 
         <!-- PROYECTOS -->
-        <section class="proyectos">
+        <section class="proyectos" id="proyectos">
             <div class="proyectos__intro">
                 <h2>PROYECTOS</h2>
                 <p>Selección de proyectos recientes y destacados</p>
@@ -147,7 +171,7 @@
                     <li class="carrusel__item" data-dialog="dialog-enpix" data-nombre="ENPIX">
 
                         <div class="proyecto__contenido">
-                            <img src="/assets/image/enpix-full.png" alt="Captura de pantalla del proyecto Enpix">
+                            <img src="/assets/image/proyectos/enpix.png" alt="Captura de pantalla del proyecto Enpix">
 
                             <button type="button" class="boton proyecto__boton" data-dialog-open="dialog-enpix">
                                 ENPIX
@@ -160,7 +184,7 @@
                     <li class="carrusel__item activa" data-dialog="dialog-happybreak" data-nombre="HAPPY BREAK">
 
                         <div class="proyecto__contenido">
-                            <img src="/assets/image/happybreak-full.png"
+                            <img src="/assets/image/proyectos/happyBreak.png"
                                 alt="Captura de pantalla del proyecto Happy Break">
 
                             <button type="button" class="boton proyecto__boton" data-dialog-open="dialog-happybreak">
@@ -174,10 +198,11 @@
                     <li class="carrusel__item" data-dialog="dialog-huellitasHotel" data-nombre="HUELLITAS HOTEL">
 
                         <div class="proyecto__contenido">
-                            <img src="/assets/image/Huellitas.png"
+                            <img src="/assets/image/proyectos/huellitasHotel.png"
                                 alt="Captura de pantalla del proyecto Huellitas Hotel">
 
-                            <button type="button" class="boton proyecto__boton" data-dialog-open="dialog-huellitasHotel">
+                            <button type="button" class="boton proyecto__boton"
+                                data-dialog-open="dialog-huellitasHotel">
                                 HUELLITAS HOTEL
                             </button>
                         </div>
@@ -189,29 +214,32 @@
         </section>
 
         <!-- HABILIDADES -->
-        <section class="habilidades">
+        <section class="habilidades" id="habilidades">
             <h2>HABILIDADES</h2>
 
             <h3>Frontend</h3>
             <ul class="lista-iconos">
-                <li><img src="/assets/iconHerramientas/javaScript.png" alt="JavaScript"></li>
-                <li><img src="/assets/iconHerramientas/html.png" alt="HTML5"></li>
-                <li><img src="/assets/iconHerramientas/css.png" alt="CSS3"></li>
+                <li><img src="/assets/habilidades/javaScript.png" alt="JavaScript" title="JavaScript"></li>
+                <li><img src="/assets/habilidades/html.png" alt="HTML5" title="HTML"></li>
+                <li><img src="/assets/habilidades/css.png" alt="CSS3" title="CSS"></li>
             </ul>
 
             <h3>Backend</h3>
             <ul class="lista-iconos">
-                <li><img src="/assets/iconHerramientas/java.png" alt="Java"></li>
-                <li><img src="/assets/iconHerramientas/springBoot.png" alt="Spring Boot"></li>
-                <li><img src="/assets/iconHerramientas/python.png" alt="Python"></li>
+                <li><img src="/assets/habilidades/java.png" alt="Java" title="Java"></li>
+                <li><img src="/assets/habilidades/springBoot.png" alt="Spring Boot" title="Spring Boot"></li>
+                <li><img src="/assets/habilidades/python.png" alt="Python" title="Python"></li>
+                <li><img src="/assets/habilidades/postgresql.png" alt="PostgreSQL" title="PostgreSQL"></li>
+                <li><img src="/assets/habilidades/git.png" alt="Git" title="Git"></li>
+                <li><img src="/assets/habilidades/gitHub.png" alt="GitHub" title="GitHub"></li>
             </ul>
         </section>
     </main>
 
     <footer>
-        <div class="contacto">
+        <div class="contacto" id="contacto">
             <h2>CONTACTO</h2>
-            <a class="boton" href="/html/contacto.html" target="_blank" rel="noopener noreferrer">Contáctame</a>
+            <button type="button" class="boton" data-dialog-open="dialog-contacto">Contáctame</button>
         </div>
 
         <div class="contacto__enlaces">
@@ -221,38 +249,151 @@
         <small>&copy;2026 | Portafolio de Mishelle Bohorquez</small>
     </footer>
 
-    <!-- VENTANAS (dialog) PROYECTO -->
-    <dialog id="dialog-enpix" aria-labelledby="dialog-enpix-title">
-        <h2 id="dialog-enpix-title" class="sr-only">Proyecto Enpix</h2>
-        <img src="" alt="Imagen ampliada del proyecto Enpix">
-        <div class="acciones-dialog">
-            <a class="boton" href="/assets/image/enpix-full.png" target="_blank" rel="noreferrer">Abrir imagen</a>
-            <form method="dialog">
-                <button type="submit">Cerrar</button>
-            </form>
+    <!-- VENTANA — PROYECTO ENPIX -->
+    <dialog id="dialog-enpix" aria-labelledby="dialog-enpix-title" class="dialog-proyecto">
+        <form method="dialog" class="dialog-proyecto__cerrar-form">
+            <button type="submit" class="dialog-proyecto__cerrar" aria-label="Cerrar ventana de Enpix">&times;</button>
+        </form>
+
+        <div class="dialog-proyecto__contenido">
+            <h2 id="dialog-enpix-title">ENPIX</h2>
+            <p class="dialog-proyecto__descripcion">
+                Videojuego educativo 2D para el aprendizaje de un nuevo idioma, diseñado para niños y niñas de escuelas
+                rurales bajo el modelo de Escuela Nueva. Trabajé en equipo en el desarrollo del videojuego y la
+                integración
+                con el backend educativo.
+            </p>
+            <div class="dialog-proyecto__fotos">
+                <img src="/assets/image/proyectos/enpix1.png" alt="Captura 1 del proyecto Enpix">
+                <img src="/assets/image/proyectos/enpix2.png" alt="Captura 2 del proyecto Enpix">
+            </div>
+            <ul class="dialog-proyecto__herramientas">
+                <li>Godot</li>
+                <li>Python</li>
+                <li>Aseprite</li>
+                <li>PostgreSQL</li>
+                <li>Supabase</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+            <a class="boton" href="https://github.com/MishelleBohorquez/VideojuegoEducativo" target="_blank"
+                rel="noreferrer">Ver proyecto</a>
         </div>
     </dialog>
 
-    <dialog id="dialog-happybreak" aria-labelledby="dialog-happybreak-title">
-        <h2 id="dialog-happybreak-title" class="sr-only">Proyecto Happy Break</h2>
-        <img src="" alt="Imagen ampliada del proyecto Happy Break">
-        <div class="acciones-dialog">
-            <a class="boton" href="/assets/image/happybreak-full.png" target="_blank" rel="noreferrer">Abrir
-                imagen</a>
-            <form method="dialog">
-                <button type="submit">Cerrar</button>
-            </form>
+    <!-- VENTANA — PROYECTO HAPPY BREAK -->
+    <dialog id="dialog-happybreak" aria-labelledby="dialog-happybreak-title" class="dialog-proyecto">
+        <form method="dialog" class="dialog-proyecto__cerrar-form">
+            <button type="submit" class="dialog-proyecto__cerrar"
+                aria-label="Cerrar ventana de Happy Break">&times;</button>
+        </form>
+
+        <div class="dialog-proyecto__contenido">
+            <h2 id="dialog-happybreak-title">HAPPY BREAK</h2>
+            <p class="dialog-proyecto__descripcion">
+                Catálogo de ecommerce donde el cliente arma su carrito y lo envía directo a WhatsApp — sin pagos en
+                línea por ahora, pero sin que el cliente tenga que escribir manualmente qué producto vio o qué lleva en
+                el carrito.
+            </p>
+            <div class="dialog-proyecto__fotos">
+                <img src="/assets/image/proyectos/happyBreak1.png" alt="Captura 1 del proyecto Happy Break">
+                <img src="/assets/image/proyectos/happyBreak2.png" alt="Captura 2 del proyecto Happy Break">
+            </div>
+            <ul class="dialog-proyecto__herramientas">
+                <li>JavaScript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Python</li>
+            </ul>
+            <a class="boton" href="https://catalogo-happy-break.vercel.app/index.html" target="_blank"
+                rel="noreferrer">Ver proyecto</a>
         </div>
     </dialog>
 
-    <dialog id="dialog-huelllitaHotel" aria-labelledby="dialog-HuellitasHotel-title">
-        <h2 id="dialog-huellitasHotel-title" class="sr-only">Proyecto Huellitas Hotel</h2>
-        <img src="" alt="Imagen ampliada del proyecto Huellitas Hotel">
-        <div class="acciones-dialog">
-            <a class="boton" href="/assets/image/HuellitasHotel-full.png" target="_blank" rel="noreferrer">Abrir imagen</a>
-            <form method="dialog">
-                <button type="submit">Cerrar</button>
+    <!-- VENTANA — PROYECTO HUELLITAS HOTEL -->
+    <dialog id="dialog-huellitasHotel" aria-labelledby="dialog-huellitasHotel-title" class="dialog-proyecto">
+        <form method="dialog" class="dialog-proyecto__cerrar-form">
+            <button type="submit" class="dialog-proyecto__cerrar"
+                aria-label="Cerrar ventana de Huellitas Hotel">&times;</button>
+        </form>
+
+        <div class="dialog-proyecto__contenido">
+            <h2 id="dialog-huellitasHotel-title">HUELLITAS HOTEL</h2>
+            <p class="dialog-proyecto__descripcion">
+                Plataforma web de reservas para mascotas: peluquería, estadía y otros servicios en un solo flujo de
+                agendamiento. Probé los endpoints con Postman antes de integrarlos al frontend.
+            </p>
+            <div class="dialog-proyecto__fotos">
+                <img src="/assets/image/proyectos/huellitasHotel1.png" alt="Captura 1 del proyecto Huellitas Hotel">
+                <img src="/assets/image/proyectos/huellitasHotel2.png" alt="Captura 2 del proyecto Huellitas Hotel">
+            </div>
+            <ul class="dialog-proyecto__herramientas">
+                <li>JavaScript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>PostgreSQL</li>
+                <li>Java</li>
+                <li>Postman</li>
+            </ul>
+            <a class="boton" href="https://samuelvelez-g.github.io/Huellitas-Hotel-Project/" target="_blank"
+                rel="noreferrer">Ver proyecto</a>
+        </div>
+    </dialog>
+
+    <!-- VENTANA DE CONTACTO -->
+    <dialog id="dialog-contacto" aria-labelledby="dialog-contacto-title" class="dialog-contacto">
+        <form method="dialog" class="dialog-contacto__cerrar-form">
+            <button type="submit" class="dialog-contacto__cerrar"
+                aria-label="Cerrar formulario de contacto">&times;</button>
+        </form>
+
+        <div class="dialog-contacto__grid">
+            <form class="formulario-contacto" id="formulario-contacto">
+                <h2 id="dialog-contacto-title" class="sr-only">Formulario de contacto</h2>
+
+                <div class="formulario-contacto__fila">
+                    <div class="campo">
+                        <label for="contacto-nombre">Nombre:</label>
+                        <input type="text" id="contacto-nombre" name="nombre" required>
+                    </div>
+                    <div class="campo">
+                        <label for="contacto-telefono">Teléfono:</label>
+                        <input type="tel" id="contacto-telefono" name="telefono" required>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="contacto-email">Email:</label>
+                    <input type="email" id="contacto-email" name="email" required>
+                </div>
+
+                <div class="campo">
+                    <label for="contacto-mensaje">Mensaje:</label>
+                    <textarea id="contacto-mensaje" name="mensaje" rows="3" required></textarea>
+                </div>
+
+                <button type="submit" class="boton">ENVIAR</button>
             </form>
+
+            <div class="dialog-contacto__imagen">
+                <img src="/assets/header/mishelleIcono.png" alt="mishelleContacto">
+                <div class="dialog-contacto__redes">
+                    <a href="https://github.com/MishelleBohorquez" target="_blank" rel="noreferrer" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.72-2.78.62-3.37-1.37-3.37-1.37-.45-1.19-1.11-1.5-1.11-1.5-.9-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/dayan-mishelle-bohorquez-rojas-6885a920b/" target="_blank"
+                        rel="noreferrer" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM3.2 8.75h3.5V21H3.2V8.75ZM9.5 8.75h3.35v1.68h.05c.47-.87 1.6-1.79 3.3-1.79 3.53 0 4.18 2.28 4.18 5.25V21h-3.5v-6.42c0-1.53-.03-3.5-2.13-3.5-2.14 0-2.47 1.66-2.47 3.39V21H9.5V8.75Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </dialog>
 
