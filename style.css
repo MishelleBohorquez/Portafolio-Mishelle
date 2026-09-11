@@ -455,6 +455,25 @@ header p::before {
     background: #333333;
 }
 
+.dialog-proyecto {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    width: min(640px, 90vw);
+    max-height: 90vh;
+    max-height: 90dvh;
+    padding: 0;
+    border: none;
+    border-radius: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
 .dialog-proyecto__herramientas {
     display: flex;
     flex-wrap: wrap;
@@ -694,20 +713,6 @@ footer {
 }
 
 /* ===== VENTANAS DE PROYECTO — mismo patrón que el diálogo de contacto ===== */
-.dialog-proyecto {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    width: min(640px, 90vw);
-    padding: 0;
-    border: none;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-}
-
 .dialog-proyecto::backdrop {
     background: rgba(0, 0, 0, 0.5);
 }
@@ -966,8 +971,14 @@ footer small {
         transform: scale(0.8) rotate(7deg) translateX(-8%);
     }
 
+    .lista-iconos {
+        flex-wrap: wrap; 
+        gap: 16px;
+    }
+
     .lista-iconos li {
-        width: 100px;
+        flex: 0 0 75px;
+        width: 75px;
     }
 
     .fila-formacion {
