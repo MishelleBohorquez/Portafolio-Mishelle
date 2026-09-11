@@ -293,24 +293,37 @@ header p::before {
     padding: 30px 20px 20px 0;
 }
 
-.foto-fondo {
+.foto-frente {
     display: block;
     width: 85%;
     aspect-ratio: 3 / 4;
     object-fit: cover;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    position: relative; 
+    z-index: 3; 
 }
 
-.foto-frente {
+.foto-fondo {
     position: absolute;
-    right: 0;
+    right: -230px;
     bottom: -10px;
-    width: 55%;
+    width: 85%;
     aspect-ratio: 3 / 4;
     object-fit: cover;
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
-    transform: rotate(4deg);
+    transform: rotate(10deg);
     z-index: 2;
+}
+
+/* CELULAR */
+@media (max-width: 768px) {
+    .foto-fondo {
+        right: 10px;
+        bottom: 0;
+        width: 60%;
+        max-width: 320px;
+        transform: rotate(6deg);
+    }
 }
 
 .foto-acento {
