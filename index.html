@@ -349,18 +349,31 @@
         </form>
 
         <div class="dialog-contacto__grid">
-            <form class="formulario-contacto" id="formulario-contacto">
-                <h2 id="dialog-contacto-title" class="sr-only">Formulario de contacto</h2>
+            <form class="formulario-contacto" id="formulario-contacto"
+                action="https://formsubmit.co/mishelle_17@live.com" method="POST">
+
+                <!-- Configuración FormSubmit -->
+                <input type="hidden" name="_subject" value="Nuevo mensaje desde mi portafolio">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://mishellebohorquez.github.io/Portafolio-Mishelle/">
+
+                <h2 id="dialog-contacto-title" class="sr-only">
+                    Formulario de contacto
+                </h2>
 
                 <div class="formulario-contacto__fila">
+
                     <div class="campo">
                         <label for="contacto-nombre">Nombre:</label>
-                        <input type="text" id="contacto-nombre" name="nombre" required>
+                        <input type="text" id="contacto-nombre" name="name" required>
                     </div>
+
                     <div class="campo">
                         <label for="contacto-telefono">Teléfono:</label>
-                        <input type="tel" id="contacto-telefono" name="telefono" required>
+                        <input type="tel" id="contacto-telefono" name="telefono" required
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                     </div>
+
                 </div>
 
                 <div class="campo">
@@ -373,7 +386,10 @@
                     <textarea id="contacto-mensaje" name="mensaje" rows="3" required></textarea>
                 </div>
 
-                <button type="submit" class="boton">ENVIAR</button>
+                <button type="submit" class="boton">
+                    ENVIAR
+                </button>
+
             </form>
 
             <div class="dialog-contacto__imagen">
