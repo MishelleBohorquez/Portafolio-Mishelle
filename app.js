@@ -229,20 +229,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-
-// Contacto
-document.addEventListener("DOMContentLoaded", () => {
-
-    document
-        .querySelectorAll("[data-dialog-open]:not(.proyecto__boton)")
-        .forEach((boton) => {
-            boton.addEventListener("click", () => {
-                const dialog = document.getElementById(
-                    boton.getAttribute("data-dialog-open")
-                );
-                if (dialog && typeof dialog.showModal === "function") {
-                    dialog.showModal();
-                }
-            });
-        });
-});
