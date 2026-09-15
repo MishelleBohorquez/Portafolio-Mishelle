@@ -1,14 +1,3 @@
-# DEPLOY
-
-https://mishellebohorquez.github.io/Portafolio-Mishelle/
-
-![Interfaz deploy](./assets/me/image.png)
-
-## Figma
-
-https://www.figma.com/design/JW1ccMd11N6fP3kyNMWGgu/Portafolio-Mishelle?node-id=0-1&t=zyUwSeG2pJYia1fc-1
-
-
 <div align="center">
 
 # 🚀 Portafolio Profesional — Mishelle Bohorquez
@@ -80,7 +69,12 @@ Catálogo e-commerce interactivo que permite al usuario armar su carrito de comp
 ## 📈 Estadísticas de GitHub
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=MishelleBohorquez&show_icons=true&theme=radical&hide_border=true" alt="Estadísticas de GitHub" />
+  <p>
+    <img src="https://github-readme-stats.vercel.app/api?username=MishelleBohorquez&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true" alt="Estadísticas de GitHub" />
+  </p>
+  <p>
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MishelleBohorquez&layout=compact&theme=radical&hide_border=true" alt="Lenguajes más usados" />
+  </p>
 </div>
 
 ---
