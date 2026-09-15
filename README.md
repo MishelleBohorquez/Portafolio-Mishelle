@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 Portafolio Profesional — Mishelle Bohorquez
+# 💻 Portafolio — Mishelle Bohorquez
 
 [![Ingeniera de Sistemas y Computación](https://img.shields.io/badge/Rol-Ingeniera%20de%20Sistemas-blueviolet?style=for-the-badge)](https://github.com/MishelleBohorquez)
 [![Full Stack Developer](https://img.shields.io/badge/Stack-Full%20Stack%20%7C%20Java%20%7C%20JS-success?style=for-the-badge)](https://github.com/MishelleBohorquez)
