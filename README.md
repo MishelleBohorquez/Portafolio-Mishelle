@@ -66,15 +66,14 @@ Catálogo e-commerce interactivo que permite al usuario armar su carrito de comp
 
 ---
 
-## 📈 Estadísticas de GitHub
+## 📈 Estadísticas y Métricas
 
 <div align="center">
-  <p>
-    <img src="https://github-readme-stats.vercel.app/api?username=MishelleBohorquez&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true" alt="Estadísticas de GitHub" />
-  </p>
-  <p>
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MishelleBohorquez&layout=compact&theme=radical&hide_border=true" alt="Lenguajes más usados" />
-  </p>
+
+[![Commits](https://img.shields.io/badge/Commits_Activos-Constantes-blueviolet?style=for-the-badge&logo=git)](https://github.com/MishelleBohorquez)
+[![Repositorios](https://img.shields.io/badge/Repositorios-3%2B_Proyectos-success?style=for-the-badge&logo=github)](https://github.com/MishelleBohorquez?tab=repositories)
+[![Main Stack](https://img.shields.io/badge/Stack_Principal-Java_%7C_Spring_Boot_%7C_JS-informational?style=for-the-badge&logo=openjdk)](https://github.com/MishelleBohorquez)
+
 </div>
 
 ---
