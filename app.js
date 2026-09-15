@@ -20,19 +20,16 @@ document.addEventListener("DOMContentLoaded", () => {
         estaAbierto ? cerrarMenu() : abrirMenu();
     });
 
-    // Cerrar al elegir una sección
     menuSecciones.querySelectorAll("a").forEach((enlace) => {
         enlace.addEventListener("click", cerrarMenu);
     });
 
-    // Cerrar al hacer click fuera del menú
     document.addEventListener("click", (evento) => {
         if (!evento.target.closest(".menu-flotante")) {
             cerrarMenu();
         }
     });
 
-    // Cerrar con la tecla Escape
     document.addEventListener("keydown", (evento) => {
         if (evento.key === "Escape") cerrarMenu();
     });
