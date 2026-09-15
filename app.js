@@ -227,28 +227,22 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-    const formularioContacto = document.getElementById("formulario-contacto");
-
-    if (formularioContacto) {
-        formularioContacto.addEventListener("submit", (evento) => {
-            evento.preventDefault();
-            console.log("Datos del formulario:", Object.fromEntries(new FormData(formularioContacto)));
-
-            formularioContacto.reset();
-            document.getElementById("dialog-contacto").close();
-        });
-    }
 
 });
 
-// Contacto formulario
+// Contacto
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("[data-dialog-open]:not(.proyecto__boton)").forEach((boton) => {
-        boton.addEventListener("click", () => {
-            const dialog = document.getElementById(boton.getAttribute("data-dialog-open"));
-            if (dialog && typeof dialog.showModal === "function") {
-                dialog.showModal();
-            }
+
+    document
+        .querySelectorAll("[data-dialog-open]:not(.proyecto__boton)")
+        .forEach((boton) => {
+            boton.addEventListener("click", () => {
+                const dialog = document.getElementById(
+                    boton.getAttribute("data-dialog-open")
+                );
+                if (dialog && typeof dialog.showModal === "function") {
+                    dialog.showModal();
+                }
+            });
         });
-    });
 });
