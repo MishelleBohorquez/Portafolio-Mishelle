@@ -45,7 +45,6 @@ h2 {
     white-space: nowrap;
 }
 
-/* ===== MENÚ FLOTANTE — ícono fijo que despliega enlaces a cada sección ===== */
 html {
     scroll-behavior: smooth;
 }
@@ -587,9 +586,10 @@ header p::before {
     padding: 8px 16px;
     background: #f2f2f2;
     border-radius: 999px;
+    font-family: "Futura Now Headline", sans-serif;
+    text-transform: uppercase;
+    font-weight: normal;
 }
-
-/* ===== HABILIDADES ===== */
 
 .habilidades {
     padding: 60px 24px;
@@ -755,7 +755,6 @@ footer {
     background: #1a1a1a;
 }
 
-/* ===== DIÁLOGOS (contacto + proyecto) — base compartida ===== */
 .dialog-contacto,
 .dialog-proyecto {
     position: fixed;
@@ -844,7 +843,6 @@ footer {
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* Botón compartido entre la ventana de proyecto y el formulario de contacto */
 .dialog-proyecto .boton,
 .formulario-contacto .boton {
     border: none;
