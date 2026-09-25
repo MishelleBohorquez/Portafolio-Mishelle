@@ -298,6 +298,11 @@ header p::before {
     font-size: 0.75em;
     line-height: 1.8;
     white-space: nowrap;
+    transition: transform 0.2s ease;
+}
+
+.sobre-mi p strong:hover {
+    transform: scale(1.06);
 }
 
 .sobre-mi__stats {
