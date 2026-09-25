@@ -270,6 +270,11 @@ header p::before {
     line-height: 1;
 }
 
+.sobre-mi h2,
+.proyectos__intro h2 {
+    color: #1a1a1a;
+}
+
 .sobre-mi h2 {
     text-align: left;
 }
@@ -277,6 +282,55 @@ header p::before {
 /* SOBRE MÍ */
 .sobre-mi p {
     text-align: justify;
+}
+
+.sobre-mi p strong {
+    display: inline-block;
+    padding: 3px 12px;
+    background: #1a1a1a;
+    color: #ffffff;
+    border-radius: 999px;
+    font-family: "Futura Now Headline", sans-serif;
+    font-weight: 800;
+    font-size: 0.75em;
+    line-height: 1.8;
+    white-space: nowrap;
+}
+
+.sobre-mi__stats {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 24px;
+    background: #1a1a1a;
+    border-radius: 16px;
+    transition: transform 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: scale(1.08);
+}
+
+.stat-card__numero {
+    font-family: "Futura Now Headline", sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    color: #ffffff;
+    line-height: 1;
+}
+
+.stat-card__label {
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #ffffff;
+    opacity: 0.85;
 }
 
 .sobre-mi {
@@ -298,11 +352,19 @@ header p::before {
     padding: 30px 20px 20px 0;
 }
 
-.foto-frente {
-    display: block;
+.foto-frente,
+.foto-fondo {
     width: 85%;
     aspect-ratio: 3 / 4;
     object-fit: cover;
+    border-radius: 16px;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.35s ease,
+                z-index 0s 0.15s;
+}
+
+.foto-frente {
+    display: block;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     position: relative;
     z-index: 3;
@@ -312,12 +374,25 @@ header p::before {
     position: absolute;
     right: -230px;
     bottom: -10px;
-    width: 85%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
     transform: rotate(10deg);
     z-index: 2;
+}
+
+/* ===== HOVER: la imagen bajo el mouse pasa al frente ===== */
+.foto-fondo:hover,
+.foto-frente:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.foto-fondo:hover {
+    transform: translateY(-70px) rotate(0deg) scale(1.03);
+    z-index: 4;
+}
+
+.foto-frente:hover {
+    transform: scale(1.03);
+    z-index: 3;
 }
 
 /* TABLET / LAPTOPS PEQUEÑAS — evita que .foto-fondo se salga de .sobre-mi antes de los 768px */
@@ -336,18 +411,6 @@ header p::before {
         max-width: 320px;
         transform: rotate(6deg);
     }
-}
-
-.foto-acento {
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
-    border: 3px solid #ffffff;
-    border-radius: 50%;
-    z-index: 3;
 }
 
 /* PROYECTOS */
@@ -483,43 +546,20 @@ header p::before {
     background: #333333;
 }
 
-.dialog-proyecto {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    width: min(640px, 90vw);
-    max-height: 90vh;
-    max-height: 90dvh;
-    padding: 0;
-    border: none;
-    border-radius: 20px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-}
-
 .dialog-proyecto__herramientas {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0;
+    gap: 8px;
     list-style: none;
 }
 
 .dialog-proyecto__herramientas li {
     font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    color: #666666;
-    padding: 0 10px;
-}
-
-.dialog-proyecto__herramientas li:not(:last-child) {
-    border-right: 1px solid #cccccc;
+    color: #363636;
+    padding: 8px 16px;
+    background: #f2f2f2;
+    border-radius: 999px;
 }
 
 /* ===== HABILIDADES ===== */
@@ -564,7 +604,7 @@ header p::before {
     align-items: center;
     flex: 1 1 0;
     min-width: 0;
-    max-width: 140px;
+    max-width: 93px;
     aspect-ratio: 1;
     padding: 8px;
     background: #1e1e1e;
@@ -683,59 +723,46 @@ footer {
     cursor: pointer;
 }
 
-/* ===== DIÁLOGO DE CONTACTO ===== */
-.dialog-contacto {
+.contacto .boton:hover,
+.contacto .boton:focus-visible {
+    background: #1a1a1a;
+}
+
+/* ===== DIÁLOGOS (contacto + proyecto) — base compartida ===== */
+.dialog-contacto,
+.dialog-proyecto {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
-    width: min(900px, 90vw);
     padding: 0;
     border: none;
     border-radius: 20px;
-    overflow: hidden;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
 }
 
-.dialog-contacto::backdrop {
-    background: rgba(0, 0, 0, 0.5);
+.dialog-contacto {
+    width: min(900px, 90vw);
+    overflow: hidden;
 }
 
-.dialog-contacto__cerrar-form {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    z-index: 5;
+.dialog-proyecto {
+    width: min(640px, 90vw);
+    max-height: 90vh;
+    max-height: 90dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
 }
 
-.dialog-contacto__cerrar {
-    width: 32px;
-    height: 32px;
-    border: none;
-    border-radius: 50%;
-    background: transparent;
-    color: #1a1a1a;
-    font-size: 1.5rem;
-    line-height: 1;
-    cursor: pointer;
-}
-
-.dialog-contacto__cerrar:hover,
-.dialog-contacto__cerrar:focus-visible {
-    background: rgba(0, 0, 0, 0.08);
-}
-
-.dialog-contacto__grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-}
-
-/* ===== VENTANAS DE PROYECTO — mismo patrón que el diálogo de contacto ===== */
+.dialog-contacto::backdrop,
 .dialog-proyecto::backdrop {
     background: rgba(0, 0, 0, 0.5);
 }
 
+.dialog-contacto__cerrar-form,
 .dialog-proyecto__cerrar-form {
     position: absolute;
     top: 16px;
@@ -743,6 +770,7 @@ footer {
     z-index: 5;
 }
 
+.dialog-contacto__cerrar,
 .dialog-proyecto__cerrar {
     width: 32px;
     height: 32px;
@@ -755,9 +783,16 @@ footer {
     cursor: pointer;
 }
 
+.dialog-contacto__cerrar:hover,
+.dialog-contacto__cerrar:focus-visible,
 .dialog-proyecto__cerrar:hover,
 .dialog-proyecto__cerrar:focus-visible {
     background: rgba(0, 0, 0, 0.08);
+}
+
+.dialog-contacto__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
 }
 
 .dialog-proyecto__contenido {
@@ -782,14 +817,24 @@ footer {
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
 }
 
-.dialog-proyecto .boton {
+/* Botón compartido entre la ventana de proyecto y el formulario de contacto */
+.dialog-proyecto .boton,
+.formulario-contacto .boton {
     border: none;
     background: #1a1a1a;
     color: #ffffff;
     padding: 12px 32px;
     border-radius: 999px;
+}
+
+.dialog-proyecto .boton {
     text-decoration: none;
     cursor: pointer;
+}
+
+.formulario-contacto .boton {
+    align-self: center;
+    margin-top: 8px;
 }
 
 @media (max-width: 560px) {
@@ -850,16 +895,6 @@ footer {
     border-bottom-color: #1a1a1a;
 }
 
-.formulario-contacto .boton {
-    border: none;
-    background: #1a1a1a;
-    color: #fff;
-    align-self: center;
-    margin-top: 8px;
-    padding: 12px 32px;
-    border-radius: 999px;
-}
-
 .dialog-contacto__imagen {
     position: relative;
 }
@@ -874,7 +909,8 @@ footer {
 .dialog-contacto__redes {
     position: absolute;
     bottom: 20px;
-    left: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     gap: 12px;
 }
@@ -912,11 +948,6 @@ footer {
     .formulario-contacto__fila {
         grid-template-columns: 1fr;
     }
-}
-
-.contacto .boton:hover,
-.contacto .boton:focus-visible {
-    background: #1a1a1a;
 }
 
 .contacto__enlaces {
@@ -965,16 +996,11 @@ footer small {
     .foto-frente {
         width: 60%;
     }
-
-    .foto-acento {
-        width: 50px;
-        height: 50px;
-    }
 }
 
 @media (max-width: 640px) {
     .carrusel {
-        --ancho-tarjeta: 74vw;
+        --ancho-tarjeta: min(58vw, 230px);
     }
 
     .carrusel__pista {
@@ -1016,12 +1042,20 @@ footer small {
     }
 }
 
+@media (max-width: 380px) {
+    .carrusel {
+        --ancho-tarjeta: min(60vw, 190px);
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .galeria-hero li,
     .carrusel__item,
     .carrusel__item img,
     .proyecto__boton,
-    .fila-formacion {
+    .fila-formacion,
+    .foto-frente,
+    .foto-fondo {
         transition: none;
     }
 
