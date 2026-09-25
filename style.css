@@ -753,11 +753,13 @@ footer {
     transform: translate(-50%, -50%);
     border: none;
     cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .contacto .boton:hover,
 .contacto .boton:focus-visible {
     background: #1a1a1a;
+    transform: translate(-50%, -50%) scale(1.08);
 }
 
 .dialog-contacto,
@@ -865,6 +867,13 @@ footer {
 .formulario-contacto .boton {
     align-self: center;
     margin-top: 8px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.formulario-contacto .boton:hover,
+.formulario-contacto .boton:focus-visible {
+    transform: scale(1.08);
+    background: #2b2b2b;
 }
 
 @media (max-width: 560px) {
