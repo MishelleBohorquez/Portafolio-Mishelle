@@ -353,17 +353,16 @@ header p::before {
 .sobre-mi__texto {
     display: flex;
     flex-direction: column;
-}
-
-.sobre-mi__cuerpo {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 
+.sobre-mi__cuerpo {
+    display: flex;
+    flex-direction: column;
+}
+
 .sobre-mi h2 {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .sobre-mi__fotos {
@@ -423,11 +422,21 @@ header p::before {
 
 /* CELULAR */
 @media (max-width: 768px) {
+    .sobre-mi__fotos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .foto-frente {
+        margin-right: 45px; /* Modificado: Desplaza la imagen principal a la izquierda para balancear el grupo */
+        margin-left: 0;
+    }
     .foto-fondo {
-        right: 10px;
-        bottom: 0;
+        right: auto;
+        left: 35%; /* Modificado: Desplaza la imagen trasera más a la izquierda y la descubre más */
+        bottom: -20px;
         width: min(60%, 280px);
-        transform: rotate(6deg);
+        transform: rotate(8deg);
     }
 }
 
@@ -1022,6 +1031,11 @@ footer small {
         --ancho-tarjeta: min(58vw, 230px);
     }
 
+    .foto-frente,
+    .foto-fondo {
+        width: min(58vw, 230px);
+    }
+
     .carrusel__pista {
         gap: clamp(16px, 5vw, 32px);
         padding-top: 35px;
@@ -1064,6 +1078,11 @@ footer small {
 @media (max-width: 380px) {
     .carrusel {
         --ancho-tarjeta: min(60vw, 190px);
+    }
+
+    .foto-frente,
+    .foto-fondo {
+        width: min(60vw, 190px);
     }
 }
 
